@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tudo sobre Google Glass</title>
+    <link rel="stylesheet" type="text/css" href="_css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="_css/form.css">
+    <link rel="icon" type="image/x-icon" href="_imagens/heart.png"/>
+</head>
+
+<script src="_javascript/funcoes.js"></script>
+<script>
+    function calcTotal() {
+        var quantidade = parseInt(document.getElementById('iQuantidade').value);
+        document.getElementById('iTotal').value = quantidade * 1500;
+    }
+</script>
+
+
+<body>
+<div id="interface">
+
+    <header id="cabecalho">
+        <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+
+        </hgroup>
+
+        <img id="icone" src="_imagens/contato.png">
+        <nav id="menu">
+            <h1> Menu Principal </h1>
+            <ol>
+                <li onmouseover="mudaFoto('_imagens/home.png')"
+                    onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')"
+                    onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a>
+                </li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')"
+                    onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')"
+                    onmouseout="mudaFoto('_imagens/contato.png')"><a
+                        href="multimidia.html">Multimídia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')"
+                    onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale
+                    conosco</a></li>
+            </ol>
+        </nav>
+    </header>
+
+
+    <header id="cabecalhoArtigo">
+        <hgroup>
+            <h3>Fale Conosco > Contato</h3>
+            <h1>Formulário de Contato</h1>
+            <h2>por Eric Pandolfo</h2>
+            <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+        </hgroup>
+    </header>
+
+
+    <form method="post" id="fContato" action="mailto:eric.pandolfo@gmail.com" oninput="calcTotal()">
+        <fieldset>
+            <legend id="usuario">Identificação do Usuário</legend>
+            <p><label for="iNome">Nome: </label><input type="text" name="tNome" id="iNome" size="25" maxlength="30"
+                                                       placeholder="Nome Completo"/></p>
+            <p><label for="iSenha">Senha: </label><input type="password" name="tSenha" id="iSenha" size="10"
+                                                         maxlength="10"
+                                                         placeholder="10 Dígitos"/></p>
+            <p><label for="iEmail">E-mail: </label><input type="email" name="tEmail" id="iEmail" size="40"
+                                                          placeholder="meuemail@meuemail.com"/></p>
+            <fieldset id="sexo">
+                <legend>Sexo:</legend>
+                <input type="radio" name="tSexo" id="iMaculino"/> <label for="iMaculino">Masculino</label><br/>
+                <input type="radio" name="tSexo" id="iFeminino"/> <label for="iFeminino">Feminino</label>
+            </fieldset>
+            <p><label for="iData">Data de Nascimento: </label><input type="date" name="tData" id="iData"/></p>
+        </fieldset>
+
+        <fieldset>
+            <legend id="endereco">Endereço do Usuário</legend>
+            <p><label for="iLogradouro">Logradouro: </label><input type="text" name="tLogradouro" id="iLogradouro"/></p>
+            <p><label for="iNumero">Número: </label><input type="text" name="tNumero" id="iNumero"/></p>
+            <p><label for="iEstado">Estado: </label>
+                <select name="tEstado" id="iEstado">
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP" selected>São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                    <!-- <optgroup label="Região Sul">
+                        <option value="PR">Paraná</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="SC">Santa Catarina</option>
+                    </optgroup> -->
+                </select>
+            </p>
+            <p><label for="iCidade">Cidade: </label><input type="text" name="tCidade" id="iCidade"/></p>
+        </fieldset>
+
+        <fieldset>
+            <legend id="mensagem">Mensagem do Usuário</legend>
+            <p><label for="iGrau">Grau de Urgência: Min<input type="range" name="tGrau" id="iGrau" min="0" max="10"
+                                                              step="1"/></label> Max
+            </p>
+            <p><label for="iMensagem">Mensagem: <textarea name="tMensagem" id="iMensagem" cols="35" rows="5"
+                                                          placeholder="Deixe aqui a sua mensagem"> </textarea></label>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend id="pedido">Quero um Google Glass</legend>
+            <p><input type="checkbox" name="tPedido" id="iPedido" checked/>
+                <label for="iPedido">Gostaria de adquirir um Google Glass quando disponível</label></p>
+            <p><label for="iCor">Cor: <input type="color" name="tCor" id="iCor"/></label></p>
+            <p><label for="iQuantidade">Quantidade: </label><input type="number" name="tQuantidade" id="iQuantidade"
+                                                                   min="1" max="10" value="0"/></p>
+            <p><label for="iTotal">Preço Total: R$ </label><input type="text" name="tTtotal" id="iTotal"
+                                                                  placeholder="Total a Pagar" readonly/></p>
+        </fieldset>
+
+        <!-- <input type="submit" value="Enviar"/> -->
+        <input id="botaoEnviar" type="image" src="_imagens/botao-enviar-hi.png" width="100"/>
+    </form>
+
+    <footer id="rodape">
+        <p>Copyright 2021 - by Eric Pandolfo <br/>
+            <a href="https://www.facebook.com/paulinhapilar" target="_blank">Facebook</a> |
+            <a href="https://www.instagram.com/pilar1l/" target="_blank"> Instagram</a>
+        </p>
+    </footer>
+</div>
+</body>
